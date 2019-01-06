@@ -42,6 +42,7 @@ podTemplate(
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
+                sh "/kubectl get pods"
                 sh "/helm install --name my-release stable/consul"
             }
         }
