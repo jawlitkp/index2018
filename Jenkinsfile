@@ -3,30 +3,11 @@ podTemplate(
     inheritFrom: 'default',
     containers: [
         containerTemplate(
-            name: 'golang', 
-            image: 'golang:1.10-alpine',
-            ttyEnabled: true,
-            command: 'cat'
-        ),
-        containerTemplate(
-            name: 'docker', 
-            image: 'docker:18.02',
-            ttyEnabled: true,
-            command: 'cat'
-        ),
-        containerTemplate(
-            name: 'helm', 
-            image: 'ibmcom/k8s-helm:v2.6.0',
-            ttyEnabled: true,
-            command: 'cat'
-        ),
-        containerTemplate(
-            name: 'kubectl', 
-            image: 'lachlanevenson/k8s-kubectl:v1.13.1',
+            name: 'base', 
+            image: 'jenkinsxio/builder-base:0.1.175',
             ttyEnabled: true,
             command: 'cat'
         )
-
     ],
     volumes: [
         hostPathVolume(
