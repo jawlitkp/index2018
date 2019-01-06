@@ -19,9 +19,9 @@ podTemplate(
     node('mypod') {
         stage ('Deploy') {
             container ('base') {
-                sh "/helm init --client-only --skip-refresh"
-                sh "/kubectl get pods"
-                sh "/helm install --name my-release stable/consul"
+                sh "helm init --client-only --skip-refresh"
+                sh "kubectl get pods"
+                sh "helm install --name my-release stable/consul"
             }
         }
     }
